@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms Example - Mozilla Firefox</title>
+</head>
+<body>
+
+    <form action="submit.php" method="post">
+        <fieldset>
+            <legend>Academic information</legend>
+            <label for="degree">Degree</label>
+            <input type="text" id="degree" name="degree" value="Master of Business Administration"><br><br>
+            <label for="student_id">Student ID</label>
+            <input type="text" id="student_id" name="student_id"><br><br>
+            <label for="classes_attended">Classes attended</label>
+            <input type="text" id="classes_attended" name="classes_attended">
+        </fieldset>
+        <fieldset>
+            <legend>Personal Details</legend>
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name"><br><br>
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name"><br><br>
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br><br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"><br><br>
+        </fieldset>
+        <input type="checkbox" id="terms" name="terms">
+        <label for="terms">I agree to the terms and conditions</label><br><br>
+        <input type="submit" value="Send Form">
+        <input type="reset" value="Clear Form">
+    </form>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+        background-color: #45a049;
+    }
+
+    .error {
+        color: red;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" maxlength="30" required>
+        </div>
+        <div class="form-group">
+            <label for="registerNumber">Register Number:</label>
+            <input type="text" id="registerNumber" name="registerNumber" required>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+        <div class="form-group">
+            <label for="program">Program:</label>
+            <input type="text" id="program" name="program" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="tempAddress">Temporary Address:</label>
+            <input type="text" id="tempAddress" name="tempAddress" required>
+        </div>
+        <div class="form-group">
+            <label for="permAddress">Permanent Address:</label>
+            <input type="text" id="permAddress" name="permAddress" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="sameAddress" onchange="copyTempAddress()"> Permanent address is same as temporary address
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var registerNumber = document.getElementById("registerNumber").value;
+            var phone = document.getElementById("phone").value;
+            var email = document.getElementById("email").value;
+
+            var namePattern = /^[A-Za-z]+$/;
+            var registerNumberPattern = /^[A-Za-z0-9]+$/;
+            var phonePattern = /^\d{10}$/;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!namePattern.test(name)) {
+                alert("Invalid name. Name should only contain alphabets.");
+                return false;
+            }
+
+            if (name.length > 30) {
+                alert("Name should not exceed 30 characters.");
+                return false;
+            }
+
+            if (!registerNumberPattern.test(registerNumber)) {
+                alert("Invalid register number. Register number should have alphabets and numbers only.");
+                return false;
+            }
+
+            if (!phonePattern.test(phone)) {
+                alert("Invalid phone number. Mobile number should be exactly 10 digits.");
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Invalid email address.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function copyTempAddress() {
+            var sameAddressCheckbox = document.getElementById("sameAddress");
+            var permAddressInput = document.getElementById("permAddress");
+            var tempAddressInput = document.getElementById("tempAddress");
+
+            if (sameAddressCheckbox.checked) {
+                permAddressInput.value = tempAddressInput.value;
+                permAddressInput.disabled = true;
+            } else {
+                permAddressInput.value = "";
+                permAddressInput.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JS practical 02</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h2>Test javascript form validation</h2>
+<form action="#">
+<table>
+<tr>
+<th>Name<span class="text-danger">*</span></th>
+<td>
+<input type="text" name="" id="name">
+<span id="nameError" class="text-danger"></span>
+</td>
+</tr>
+<tr>
+<th>Address</th>
+<td>
+<input type="text" name="" id="address">
+<span id="addressError" class="text-danger"></span>
+</td>
+</tr>
+<tr>
+<th>Zip code<span class="text-danger">*</span></th>
+<td>
+<input type="text" name="" id="zipCode">
+<span id="zipError" class="text-danger"></span>
+</td>
+</tr>
+<tr>
+<th>Select country<span class="text-danger">*</span></th>
+<td><select name="" id=""><option value="">Select
+country</option></select></td>
+</tr>
+<tr>
+<th>Gender<span class="text-danger">*</span></th>
+<td><input type="radio" name="gender" id="">Male <input
+type="radio" name="gender" id="">Female</td>
+</tr>
+<tr>
+<th>Preferences<span class="text-danger">*</span></th>
+<td>
+<input type="checkbox" name="" id="">Red
+<input type="checkbox" name="" id="">Green
+<input type="checkbox" name="" id="">Blue
+<span id="preferencesError" class="textdanger"></span>
+</td>
+</tr>
+<tr>
+<th>Phone number<span class="text-danger">*</span></th>
+<td><input type="text" name="" id=""></td>
+</tr>
+<tr>
+<th>Email<span class="text-danger">*</span></th>
+<td><input type="text" name="" id=""></td>
+</tr>
+<tr>
+<th>Password<span class="text-danger">*</span></th>
+<td>
+<input type="password" name="" id="password">
+<span id="passwordError" class="text-danger"></span>
+</td>
+</tr>
+<tr>
+<th>Verify password<span class="text-danger">*</span></th>
+<td>
+<input type="password" name="" id="verifyPassword">
+<span id="verifyPasswordError" class="textdanger"></span>
+</td>
+</tr>
+<tr>
+<td><input type="submit" name="" value="SEND"
+onclick="validateForm()"></td>
+<td><input type="submit" name="" value="CLEAR"></td>
+</tr>
+</table>
+</form>
+<script src="js/main.js"></script>
